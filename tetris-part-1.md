@@ -30,7 +30,7 @@ And... __What do you love to see in the game?__
 ### Then comes the Math
 Let us define those evaluation variables. Let them be `num_of_holes`, `sum_of_difference`, `landing_height`, `lines_cleared`, `height_range` and `total_height`. Then we have:
 
-<div style="text-align: center;">___Score = w<sub>1</sub> holes + w<sub>2</sub> difference + w<sub>3</sub> landing + w<sub>4</sub> cleared + w<sub>5</sub> range + w<sub>6</sub> total height___</div>
+___Score = w<sub>1</sub> holes + w<sub>2</sub> difference + w<sub>3</sub> landing + w<sub>4</sub> cleared + w<sub>5</sub> range + w<sub>6</sub> total height___
 
 Where w<sub>i</sub> are just some constants that represents the weight of each factor. If you are a bit confused, you can think it this way: for instance, if w<sub>1</sub> is negative, then the more number of holes a state has, the smaller the score will be. Another example would be w<sub>4</sub> is larger than w<sub>5</sub>, which means that even when `lines_cleared` and `height_range` has the same value (under same measurement), `lines_cleared` will contribute more the the score than `height_range`, which means that `lines_cleared` is more likely to affect the final score.
 
