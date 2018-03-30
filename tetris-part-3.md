@@ -83,5 +83,23 @@ end
 You may notice that I left the `testMove` function because this function can have multiple ways of implementation. The basic idea for this function is just return the sum of `attributeWeight * attributeData`. Then we have `evaluateParticles`. For simplicity, for now we just say the more lines that you have cleared, the more you fit this game. After that we have `updateParticles`, which will be shown below:
 
 ```python
+updateParticles():
 
+  for p in particles:
+
+    # Note here, positions, velocities are stored as array
+    # every position and velocity need to be updated separately
+    for index, v in velocity:
+      cognitive <- random1 * c1 * selfBestPosition[index] - currentPosition[index]
+      social <- random2 * c2 * globalBestPosition[index] - currentPosition[index]
+      v <- inertia * v + cognitive + social
+    end
+
+    for index, w in position:
+      w <- w + position[index]
+    end
+  end
+end
 ```
+
+Yes then we have finished! Quite simple right? However, this implementation does not behave very well in the exact training. In my next chapter I will be talking about why and how to improve it!
